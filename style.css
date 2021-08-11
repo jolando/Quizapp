@@ -1,0 +1,150 @@
+body {
+  background-color: rgba(88, 85, 86, 0.137) !important;
+  max-height: calc(100vh - 50px);
+  width: 100%;
+  height: 100vh;
+}
+
+.quiz-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    153deg,
+    rgba(2, 0, 36, 0.76234243697479) 0%,
+    rgba(43, 112, 184, 0.5606617647058824) 94%
+  );
+}
+
+.card-body {
+  padding: 1.5em 0 !important;
+  margin: 0 1em;
+}
+
+.card-img-top {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.quiz-card {
+  position: relative;
+  width: 82rem;
+  /* height: 100%; */
+}
+
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 2em;
+}
+
+.quiz-answer:hover {
+  cursor: pointer;
+  background: rgba(98, 99, 98, 0.301);
+}
+
+.bg-success,
+.bg-danger {
+  color: white;
+}
+
+.endscreen-img {
+  display: flex;
+  width: 50%;
+  height: 300px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* @@@@@@@@@@OVERLAY@@@@@@@@@@@@ */
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(131, 131, 141);
+  z-index: 10;
+}
+
+.start-screen-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background-color: rgb(63, 48, 148);
+  color: white;
+  padding: 2em 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.menu-nav p:hover {
+  border-left: 1px solid white;
+  display: block;
+  padding-left: 1em;
+  /* padding-block-start: 20px; */
+}
+
+.start-screen-logo {
+  margin-bottom: 6em;
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(img/brainbg.jpg);
+  height: 100%;
+  width: 70%;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+.start-screen-title {
+    margin: 1em 4em;
+}
+
+.start-btn {
+    position: absolute;
+    top: 700px;
+    bottom: 50px;
+    left: 500px;
+    max-height: 70px;
+
+}
+
+
+.d-none {
+    display: none;
+}
