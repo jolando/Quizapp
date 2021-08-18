@@ -19,6 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@600&display=swap" rel="stylesheet">
+
+  
 </head>
 
 <body onload="init()">
@@ -33,10 +35,10 @@
           Start
         </button>
       </div>
-      <div id="endscreen" class="card-body d-none">
+      <div id="endscreen" class="d-none">
         <img class="end-picture" src="img/pokal.png">
-        <h2 class="mt-4">Quiz beendet!</h2>
-        <p class="text-center">Du hast <span><b id="right-questions-endscreen">xxx</b></span> Fragen von <span><b id="all-questions-endscreen"></b></span> richtig beantwortet.</p>
+        <h2 class="mt-4 endscreen-title">Quiz completed!</h2>
+        <p class="text-center endscreen-subtitle">You answered <span><b class="highlighter" id="right-questions-endscreen"></b></span> questions out of <span><b class="highlighter" id="all-questions-endscreen"></b></span> correctly.</p>
         <button class="btn btn-outline-light restart-btn" onclick="restartGame()">Restart</button>
       </div>
       <div id="main-content-container" class="main-content-container">
@@ -51,48 +53,41 @@
           <p id="questiontext" class="main-question"></p>
           <div class="answer">
             <div class="card answer-card" style="width: 18rem;">
-              <div id="feedback-card-0" onclick="getRightAnswer(0)" class="card-body reset-class">
-                <p id="answer-field0" class="card-text"></p>
+              <div id="feedback-card-0" onclick="getRightAnswer('answer-0')" class="card-body reset-class">
+                <p id="answer-0" class="card-text"></p>
               </div>
             </div>
             <div class="card answer-card" style="width: 18rem;">
-              <div id="feedback-card-1" onclick="getRightAnswer(1)" class="card-body reset-class">
-                <p id="answer-field1" class="card-text"></p>
+              <div id="feedback-card-1" onclick="getRightAnswer('answer-1')" class="card-body reset-class">
+                <p id="answer-1" class="card-text"></p>
               </div>
             </div>
             <div class="card answer-card" style="width: 18rem;">
-              <div id="feedback-card-2" onclick="getRightAnswer(2)" class="card-body reset-class">
-                <p id="answer-field2" class="card-text"> </p>
+              <div id="feedback-card-2" onclick="getRightAnswer('answer-2')" class="card-body reset-class">
+                <p id="answer-2" class="card-text"> </p>
               </div>
             </div>
             <div class="card answer-card" style="width: 18rem;">
-              <div id="feedback-card-3" onclick="getRightAnswer(3)" class="card-body reset-class">
-                <p id="answer-field3" class="card-text"></p>
+              <div id="feedback-card-3" onclick="getRightAnswer('answer-3')" class="card-body reset-class">
+                <p id="answer-3" class="card-text"></p>
               </div>
             </div>
             <button onclick="nextQuestion()" id="next-button" class="carousel-control-next" type="button"
-              data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              data-bs-target="#carouselExampleInterval" data-bs-slide="next" disabled>
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually">Next<br>Question<br< /span>
             </button>
 
           </div>
           <div class="progress">
-            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">25%</div>
+            <div id="progress-bar" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 0%"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="./js/confetti.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
-
-<!-- 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div> -->
