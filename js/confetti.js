@@ -54,10 +54,8 @@ const Confettiful = function (el) {
     }, 25);
   };
   
-  
-
-  let confetti = () => {
-    window.confettiful = new Confettiful(document.querySelector(".quiz-container"));
+  function startConfetti() {
+    confettiful = new Confettiful(document.querySelector(".quiz-container"));
   }
-
-  
+     
+ 

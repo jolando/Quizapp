@@ -45,7 +45,7 @@ let questionList = [
     answer_0: "while()",
     answer_1: "forEach()",
     answer_2: "loop()",
-    answer_3: "None of the above.",
+    answer_3: "None",
     'right_answer': 1,
   },
   {
@@ -84,6 +84,7 @@ let AUDIO_FAIL = new Audio('audio/fail.mp3');
 function init() {
   document.getElementById('all-questions').innerHTML = questionList.length;
   loadSetup();
+  
 }
 
 function startQuiz() {
@@ -94,7 +95,7 @@ function startQuiz() {
 function loadSetup() {
   if (questionList.length <= 0 || currentQuestion < questionList.length) {
     for (let i = 0; i < 4; i++) {
-      document.getElementById('answer-' + i).innerHTML = questionList[currentQuestion]['answer_' +i];
+      document.getElementById('answer-' + i).innerHTML = questionList[currentQuestion]['answer_' + i];
     }
     document.getElementById('questiontext').innerHTML = questionList[currentQuestion]['question'];
     document.getElementById("current-question").innerHTML = questionCounter + 1;
@@ -110,9 +111,12 @@ function restartGame() {
   currentQuestion = 0;
   document.getElementById('current-question').innerHTML = currentQuestion;
   rightQuestions = 0;
-  // confetti().pause()
-  updateProgressbar();
+  
+  document.getElementById("progress-bar").style = 'width: 0%;';
+  resetAnswerCards();
   init(); 
+  stopConfetti();
+  
 }
 
 function endQuiz() {
@@ -124,10 +128,12 @@ function endQuiz() {
 }
 
 function updateProgressbar() {
+
   let percent = (currentQuestion + 1) / questionList.length;
   percent = Math.round(percent * 100);
   document.getElementById("progress-bar").innerHTML = `${percent}%`;
   document.getElementById("progress-bar").style = `width: ${percent}%;`;
+  console.log(percent);
 }
 
 function nextQuestion() {
@@ -155,19 +161,19 @@ function getRightAnswer(selectedAnswer) {
 function rightSelection(id) {
   AUDIO_SUCCESS.play();
   rightQuestions++;
-  document.getElementById(id).parentNode.classList.add("right-choise");
+  document.getElementById(id).parentNode.classList.add("right-choice");
 }
 
 function wrongSelection(id, answer) {
   AUDIO_FAIL.play();
-  document.getElementById(answer).parentNode.classList.add("wrong-choise");
-  document.getElementById(id).parentNode.classList.add("right-choise");
+  document.getElementById(answer).parentNode.classList.add("wrong-choice");
+  document.getElementById(id).parentNode.classList.add("right-choice");
 }
 
 function resetAnswerCards() {
   for (let i = 0; i <= 3; i++) {
-    document.getElementById("answer-" + i).parentNode.classList.remove("wrong-choise");
-    document.getElementById("answer-" + i).parentNode.classList.remove("right-choise");
+    document.getElementById("answer-" + i).parentNode.classList.remove("wrong-choice");
+    document.getElementById("answer-" + i).parentNode.classList.remove("right-choice");
   }
 }
 

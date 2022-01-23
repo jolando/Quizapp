@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qizapp</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/confetti.css" />
 
 
   <!-- Bootstrap File -->
@@ -20,16 +22,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@600&display=swap" rel="stylesheet">
 
-  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles@1.22.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.7.1"></script>
+
 </head>
 
 <body onload="init()">
   <div class="quiz-container">
+
     <div class="quiz-card card">
-      <div id="start-overlay" class="start-overlay">
-        <!-- <img class="start-screen-logo" src="img/logo.png" /> -->
-      </div>
-      <div id ="start-txt" class="start-overlay-container">
+      <div id="start-overlay" class="start-overlay"></div>
+      <div id="start-txt" class="start-overlay-container">
         <h1 class="start-title">Welcome to the <br>JS QUIZ</h1>
         <button onclick="startQuiz()" type="button" class="btn btn-start btn-outline-light">
           Start
@@ -38,11 +41,13 @@
       <div id="endscreen" class="d-none">
         <img class="end-picture" src="img/pokal.png">
         <h2 class="mt-4 endscreen-title">Quiz completed!</h2>
-        <p class="text-center endscreen-subtitle">You answered <span><b class="highlighter" id="right-questions-endscreen"></b></span> questions out of <span><b class="highlighter" id="all-questions-endscreen"></b></span> correctly.</p>
+        <p class="text-center endscreen-subtitle">You answered <span><b class="highlighter"
+              id="right-questions-endscreen"></b></span> questions out of <span><b class="highlighter"
+              id="all-questions-endscreen"></b></span> correctly.</p>
         <button class="btn btn-outline-light restart-btn" onclick="restartGame()">Restart</button>
       </div>
       <div id="main-content-container" class="main-content-container">
-        <div class="slider">
+        <div class="inner-content">
           <img class="main-logo" src="img/logo.png">
           <div class="question-counter">
             Question :
@@ -80,7 +85,8 @@
 
           </div>
           <div class="progress">
-            <div id="progress-bar" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 0%"></div>
+            <div id="progress-bar" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+              style="width: 0%"></div>
           </div>
         </div>
       </div>
