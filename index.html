@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,146 +11,88 @@
     <link rel="stylesheet" href="css/confetti.css" />
 
     <!-- Bootstrap File -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amiko:wght@600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@600&display=swap" rel="stylesheet" />
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/tsparticles@1.22.1"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.7.1"
-    ></script>
-  </head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles@1.22.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.7.1"></script>
+</head>
 
-  <body onload="init()">
+<body onload="init()">
     <div class="quiz-container">
-      <div class="quiz-card card">
-        <div id="start-overlay" class="start-overlay"></div>
-        <div id="start-txt" class="start-overlay-container">
-          <h1 class="start-title">Welcome to the <br />JS QUIZ</h1>
-          <button
-            onclick="startQuiz()"
-            type="button"
-            class="btn btn-start btn-outline-light"
-          >
+        <div class="quiz-card card">
+            <div id="start-overlay" class="start-overlay"></div>
+            <div id="start-txt" class="start-overlay-container">
+                <h1 class="start-title">Welcome to the <br />JS QUIZ</h1>
+                <button onclick="startQuiz()" type="button" class="btn btn-start btn-outline-light">
             Start
           </button>
-        </div>
-        <div id="endscreen" class="d-none">
-          <img class="end-picture" src="img/pokal.png" />
-          <h2 class="mt-4 endscreen-title">Quiz completed!</h2>
-          <p class="text-center endscreen-subtitle">
-            You answered
-            <span
-              ><b class="highlighter" id="right-questions-endscreen"></b
-            ></span>
-            questions out of
-            <span
-              ><b class="highlighter" id="all-questions-endscreen"></b
-            ></span>
-            correctly.
-          </p>
-          <button
-            class="btn btn-outline-light restart-btn"
-            onclick="restartGame()"
-          >
+            </div>
+            <div id="endscreen" class="d-none">
+                <img class="end-picture" src="img/pokal.png" />
+                <h2 class="mt-4 endscreen-title">Quiz completed!</h2>
+                <p class="text-center endscreen-subtitle">
+                    You answered
+                    <span><b class="highlighter" id="right-questions-endscreen"></b
+            ></span> questions out of
+                    <span><b class="highlighter" id="all-questions-endscreen"></b
+            ></span> correctly.
+                </p>
+                <button class="btn btn-outline-light restart-btn" onclick="restartGame()">
             Restart
           </button>
-        </div>
-        <div id="main-content-container" class="main-content-container">
-          <div class="inner-content">
-            <img class="main-logo" src="img/logo.png" />
-            <div class="question-counter">
-              Question :
-              <b id="current-question"></b>
-              /
-              <b id="all-questions"></b>
             </div>
-            <p id="questiontext" class="main-question"></p>
-            <div class="answer">
-              <div class="card answer-card" style="width: 18rem">
-                <div
-                  id="feedback-card-0"
-                  onclick="getRightAnswer('answer-0')"
-                  class="card-body reset-class"
-                >
-                  <p id="answer-0" class="card-text"></p>
-                </div>
-              </div>
-              <div class="card answer-card" style="width: 18rem">
-                <div
-                  id="feedback-card-1"
-                  onclick="getRightAnswer('answer-1')"
-                  class="card-body reset-class"
-                >
-                  <p id="answer-1" class="card-text"></p>
-                </div>
-              </div>
-              <div class="card answer-card" style="width: 18rem">
-                <div
-                  id="feedback-card-2"
-                  onclick="getRightAnswer('answer-2')"
-                  class="card-body reset-class"
-                >
-                  <p id="answer-2" class="card-text"></p>
-                </div>
-              </div>
-              <div class="card answer-card" style="width: 18rem">
-                <div
-                  id="feedback-card-3"
-                  onclick="getRightAnswer('answer-3')"
-                  class="card-body reset-class"
-                >
-                  <p id="answer-3" class="card-text"></p>
-                </div>
-              </div>
-              <button
-                onclick="nextQuestion()"
-                id="next-button"
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next"
-                disabled
-              >
+            <div id="main-content-container" class="main-content-container">
+                <div class="inner-content">
+                    <img class="main-logo" src="img/logo.png" />
+                    <div class="question-counter">
+                        Question :
+                        <b id="current-question"></b> /
+                        <b id="all-questions"></b>
+                    </div>
+                    <p id="questiontext" class="main-question"></p>
+                    <div class="answer">
+                        <div class="card answer-card" style="width: 18rem">
+                            <div id="feedback-card-0" onclick="getRightAnswer('answer-0')" class="card-body reset-class">
+                                <p id="answer-0" class="card-text"></p>
+                            </div>
+                        </div>
+                        <div class="card answer-card" style="width: 18rem">
+                            <div id="feedback-card-1" onclick="getRightAnswer('answer-1')" class="card-body reset-class">
+                                <p id="answer-1" class="card-text"></p>
+                            </div>
+                        </div>
+                        <div class="card answer-card" style="width: 18rem">
+                            <div id="feedback-card-2" onclick="getRightAnswer('answer-2')" class="card-body reset-class">
+                                <p id="answer-2" class="card-text"></p>
+                            </div>
+                        </div>
+                        <div class="card answer-card" style="width: 18rem">
+                            <div id="feedback-card-3" onclick="getRightAnswer('answer-3')" class="card-body reset-class">
+                                <p id="answer-3" class="card-text"></p>
+                            </div>
+                        </div>
+                        <button onclick="nextQuestion()" id="next-button" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next" disabled>
                 <span
                   class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
                 <span class="visually">Next<br />Question<br /></span>
               </button>
-              <div class="progress">
-                <div
-                  id="progress-bar"
-                  class="progress-bar progress-bar-striped bg-warning"
-                  role="progressbar"
-                  style="width: 0%"
-                ></div>
-              </div>
+                    </div>
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <script src="./js/confetti.js"></script>
     <script src="js/script.js"></script>
-  </body>
+</body>
+
 </html>

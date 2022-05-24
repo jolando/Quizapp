@@ -1,200 +1,197 @@
 body {
-  /* font-family: "Amiko", sans-serif !important; */
-  font-weight: bold;
+    /* font-family: "Amiko", sans-serif !important; */
+    font-weight: bold;
 }
 
 .quiz-container {
-  display: flex;
-  height: 100vh;
-  background: linear-gradient(
-    10deg,
-    rgba(82, 80, 80, 0.397),
-    rgb(240, 236, 236)
-  );
+    display: flex;
+    height: 100vh;
+    background: linear-gradient( 10deg, rgba(82, 80, 80, 0.397), rgb(240, 236, 236));
 }
 
 .card {
-  border-radius: 0px !important;
-  border: 2px solid rgba(0, 0, 0, 0.24) !important;
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.233);
+    border-radius: 0px !important;
+    border: 2px solid rgba(0, 0, 0, 0.24) !important;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.233);
 }
 
 .quiz-card {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 72em;
-  height: 100%;
-  max-height: 49em;
-  margin: auto;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    120deg,
-    rgba(223, 153, 24, 0.746) 0%,
-    rgba(20, 17, 185, 0.767) 94%
-  );
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 72em;
+    height: 100%;
+    max-height: 49em;
+    margin: auto;
+    background: rgb(2, 0, 36);
+    background: linear-gradient( 120deg, rgba(223, 153, 24, 0.746) 0%, rgba(20, 17, 185, 0.767) 94%);
 }
+
 .card-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
 }
 
 .main-content-container {
-  display: flex;
-  justify-content: center;
-  color: white;
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 
 .inner-content {
-  height: 100%;
-  width: 90%;
-
-  z-index: 1;
+    height: 100%;
+    width: 90%;
+    z-index: 1;
 }
 
 .answer {
-  display: flex;
+    display: flex;
 }
 
 .question-counter {
-  font-size: 20px;
-  margin-top: 220px;
+    font-size: 20px;
+    margin-top: 220px;
 }
+
 .main-question {
-  /* margin-bottom: 120px; */
-  font-size: 35px;
-  max-width: 830px;
-  word-wrap: break-word;
+    /* margin-bottom: 120px; */
+    font-size: 35px;
+    max-width: 830px;
+    word-wrap: break-word;
 }
 
 .answer-card {
-  background-color: rgba(231, 236, 240, 0.185) !important;
-  border: none !important;
-  cursor: pointer;
-  margin: 0.1em;
-  border-radius: 2px !important;
-  font-size: 25px;
-  text-align: center;
-  border: 1px white solid !important;
+    background-color: rgba(231, 236, 240, 0.185) !important;
+    border: none !important;
+    cursor: pointer;
+    margin: 0.1em;
+    border-radius: 2px !important;
+    font-size: 25px;
+    text-align: center;
+    border: 1px white solid !important;
 }
 
 .answer-card:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .carousel-control-next {
-  top: 44% !important;
-
-  background-color: rgba(0, 0, 0, 0.233) !important;
-  /* max-width: 10px; */
-  height: 50px;
-  cursor: pointer;
+    top: 44% !important;
+    background-color: rgba(0, 0, 0, 0.233) !important;
+    /* max-width: 10px; */
+    height: 50px;
+    cursor: pointer;
 }
 
 .progress {
-  margin-top: 5px;
-  min-height: 10px;
+    margin-top: 5px;
+    min-height: 10px;
 }
+
 
 /* @@@@@@@@@@OVERLAY@@@@@@@@@@@@ */
 
 .start-overlay {
-  position: absolute;
-  opacity: 0.94;
-  height: 100%;
-  width: 100%;
-  filter: blur(10px);
-  background: rgb(0, 0, 0);
-  z-index: 10;
-  border-radius: 10px !important;
+    position: absolute;
+    opacity: 0.94;
+    height: 100%;
+    width: 100%;
+    filter: blur(10px);
+    background: rgb(0, 0, 0);
+    z-index: 10;
+    border-radius: 10px !important;
 }
 
 .start-overlay-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  color: white;
-  z-index: 30;
-  top: 160px;
-  left: 50%;
-  transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    color: white;
+    z-index: 30;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 .start-screen-logo {
-  margin: 30px;
-  display: absolute;
-  top: 20px;
-  left: 100px;
-  width: 100px;
+    margin: 30px;
+    display: absolute;
+    top: 20px;
+    left: 100px;
+    width: 100px;
 }
 
 .start-title {
-  z-index: 1;
-  text-align: center;
-  margin-top: 200px;
-  letter-spacing: 5px;
+    z-index: 1;
+    text-align: center;
+    margin-top: 200px;
+    letter-spacing: 5px;
 }
+
 .btn-start {
-  padding: 0.2em 3.3em !important;
-  margin-top: 100px;
-  font-size: 30px !important;
+    padding: 0.2em 3.3em !important;
+    margin-top: 100px;
+    font-size: 30px !important;
 }
+
 .highlighter {
-  color: rgba(12, 12, 11, 0.836) !important;
-  font-size: 22px !important;
+    color: rgba(12, 12, 11, 0.836) !important;
+    font-size: 22px !important;
 }
 
 .d-none {
-  display: none;
+    display: none;
 }
 
 .right-choice {
-  background-color: rgba(104, 185, 72, 0.384);
-  border: 1px solid rgb(32, 190, 32);
-  transition: all 300ms ease-in-out;
+    background-color: rgba(104, 185, 72, 0.384);
+    border: 1px solid rgb(32, 190, 32);
+    transition: all 300ms ease-in-out;
 }
 
 .wrong-choice {
-  background-color: rgba(121, 10, 10, 0.308);
-  border: 1px solid rgba(197, 43, 43, 0.883);
-  transition: all 300ms ease-in-out;
+    background-color: rgba(121, 10, 10, 0.308);
+    border: 1px solid rgba(197, 43, 43, 0.883);
+    transition: all 300ms ease-in-out;
 }
+
 
 /* @@@@@@@@@@ENDSCREEN@@@@@@@@@@@@ */
 
 #endscreen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: aliceblue;
-  font-size: larger;
-  height: 100vh !important;
-  z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: larger;
+    height: 100vh !important;
+    z-index: 2;
 }
 
 .end-picture {
-  width: 100%;
-  object-fit: contain;
-  height: 100vh;
-  max-height: 400px;
-  margin-top: 20px;
+    width: 100%;
+    object-fit: contain;
+    height: 100vh;
+    max-height: 400px;
+    margin-top: 20px;
 }
 
 .endscreen-title {
-  font-size: 50px;
-  text-align: center;
+    font-size: 50px;
+    text-align: center;
 }
 
 .endscreen-subtitle {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .restart-btn {
-  padding: 10px 70px !important;
-  cursor: pointer;
+    padding: 10px 70px !important;
+    cursor: pointer;
 }
